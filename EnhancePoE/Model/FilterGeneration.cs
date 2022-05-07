@@ -50,7 +50,8 @@ namespace EnhancePoE.Model
             const string tab = "\t";
             
             if (influenced)
-                result += newLine + tab + "HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord";
+                //result += newLine + tab + "HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord";
+                result += newLine + tab + "HasInfluence Elder";
             else
                 result += newLine + tab + "HasInfluence None";
 

@@ -6,7 +6,7 @@
 # To comment you have to make sure the '#' sign is at the beginning of the line, no in-line comments allowed
 
 #Show 
-#   HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord
+#   HasInfluence Elder
 #   ItemLevel >= 60 
 # 	ItemLevel <= 74 
 # 	Rarity Rare 

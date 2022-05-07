@@ -25,12 +25,12 @@ namespace EnhancePoE
         public static List<ItemSet> ItemSetList { get; set; }
         public static List<ItemSet> ItemSetListHighlight { get; set; } = new List<ItemSet>();
 
-        public static ItemSet ItemSetShaper { get; set; }
+        //public static ItemSet ItemSetShaper { get; set; }
         public static ItemSet ItemSetElder { get; set; }
-        public static ItemSet ItemSetWarlord { get; set; }
-        public static ItemSet ItemSetCrusader { get; set; }
-        public static ItemSet ItemSetRedeemer { get; set; }
-        public static ItemSet ItemSetHunter { get; set; }
+        //public static ItemSet ItemSetWarlord { get; set; }
+        //public static ItemSet ItemSetCrusader { get; set; }
+        //public static ItemSet ItemSetRedeemer { get; set; }
+        //public static ItemSet ItemSetHunter { get; set; }
 
         public static CancellationTokenSource cs { get; set; } = new CancellationTokenSource();
         public static CancellationToken CancelationToken { get; set; } = cs.Token;
@@ -52,12 +52,12 @@ namespace EnhancePoE
 
         private static void GenerateInfluencedItemSets()
         {
-            ItemSetShaper = new ItemSet { InfluenceType = "shaper" };
+            //ItemSetShaper = new ItemSet { InfluenceType = "shaper" };
             ItemSetElder = new ItemSet { InfluenceType = "elder" };
-            ItemSetWarlord = new ItemSet { InfluenceType = "warlord" };
-            ItemSetHunter = new ItemSet { InfluenceType = "hunter" };
-            ItemSetCrusader = new ItemSet { InfluenceType = "crusader" };
-            ItemSetRedeemer = new ItemSet { InfluenceType = "redeemer" };
+            //ItemSetWarlord = new ItemSet { InfluenceType = "warlord" };
+            //ItemSetHunter = new ItemSet { InfluenceType = "hunter" };
+            //ItemSetCrusader = new ItemSet { InfluenceType = "crusader" };
+            //ItemSetRedeemer = new ItemSet { InfluenceType = "redeemer" };
         }
 
         private static void GenerateItemSetList()
@@ -198,12 +198,12 @@ namespace EnhancePoE
         {
             foreach (var tab in StashTabList.StashTabs)
             {
-                foreach (var i in tab.ItemListShaper)
-                {
-                    if (ItemSetShaper.EmptyItemSlots.Count == 0) break;
+                //foreach (var i in tab.ItemListShaper)
+                //{
+                //    if (ItemSetShaper.EmptyItemSlots.Count == 0) break;
 
-                    ItemSetShaper.AddItem(i);
-                }
+                //    ItemSetShaper.AddItem(i);
+                //}
 
                 foreach (var i in tab.ItemListElder)
                 {
@@ -212,33 +212,33 @@ namespace EnhancePoE
                     ItemSetElder.AddItem(i);
                 }
 
-                foreach (var i in tab.ItemListCrusader)
-                {
-                    if (ItemSetCrusader.EmptyItemSlots.Count == 0) break;
+                //foreach (var i in tab.ItemListCrusader)
+                //{
+                //    if (ItemSetCrusader.EmptyItemSlots.Count == 0) break;
 
-                    ItemSetCrusader.AddItem(i);
-                }
+                //    ItemSetCrusader.AddItem(i);
+                //}
 
-                foreach (var i in tab.ItemListWarlord)
-                {
-                    if (ItemSetWarlord.EmptyItemSlots.Count == 0) break;
+                //foreach (var i in tab.ItemListWarlord)
+                //{
+                //    if (ItemSetWarlord.EmptyItemSlots.Count == 0) break;
 
-                    ItemSetWarlord.AddItem(i);
-                }
+                //    ItemSetWarlord.AddItem(i);
+                //}
 
-                foreach (var i in tab.ItemListRedeemer)
-                {
-                    if (ItemSetRedeemer.EmptyItemSlots.Count == 0) break;
+                //foreach (var i in tab.ItemListRedeemer)
+                //{
+                //    if (ItemSetRedeemer.EmptyItemSlots.Count == 0) break;
 
-                    ItemSetRedeemer.AddItem(i);
-                }
+                //    ItemSetRedeemer.AddItem(i);
+                //}
 
-                foreach (var i in tab.ItemListHunter)
-                {
-                    if (ItemSetHunter.EmptyItemSlots.Count == 0) break;
+                //foreach (var i in tab.ItemListHunter)
+                //{
+                //    if (ItemSetHunter.EmptyItemSlots.Count == 0) break;
 
-                    ItemSetHunter.AddItem(i);
-                }
+                //    ItemSetHunter.AddItem(i);
+                //}
             }
         }
 
@@ -569,12 +569,14 @@ namespace EnhancePoE
 
                 // invoke exalted recipe ready
                 if (Settings.Default.ExaltedRecipe)
-                    if (ItemSetShaper.EmptyItemSlots.Count == 0
+                    if (
+                        //ItemSetShaper.EmptyItemSlots.Count == 0
                         || ItemSetElder.EmptyItemSlots.Count == 0
-                        || ItemSetCrusader.EmptyItemSlots.Count == 0
-                        || ItemSetWarlord.EmptyItemSlots.Count == 0
-                        || ItemSetHunter.EmptyItemSlots.Count == 0
-                        || ItemSetRedeemer.EmptyItemSlots.Count == 0)
+                        //|| ItemSetCrusader.EmptyItemSlots.Count == 0
+                        //|| ItemSetWarlord.EmptyItemSlots.Count == 0
+                        //|| ItemSetHunter.EmptyItemSlots.Count == 0
+                        //|| ItemSetRedeemer.EmptyItemSlots.Count == 0
+                        )
                     {
                         MainWindow.Overlay.WarningMessage = "Exalted Recipe ready!";
                         MainWindow.Overlay.ShadowOpacity = 1;
@@ -914,18 +916,19 @@ namespace EnhancePoE
 
             if (Settings.Default.ExaltedRecipe)
             {
-                ItemSetShaper.OrderItems();
+                //ItemSetShaper.OrderItems();
                 ItemSetElder.OrderItems();
-                ItemSetWarlord.OrderItems();
-                ItemSetCrusader.OrderItems();
-                ItemSetHunter.OrderItems();
-                ItemSetRedeemer.OrderItems();
-                if (ItemSetShaper.EmptyItemSlots.Count == 0)
-                    ItemSetListHighlight.Add(new ItemSet
-                    {
-                        ItemList = new List<Item>(ItemSetShaper.ItemList),
-                        EmptyItemSlots = new List<string>(ItemSetShaper.EmptyItemSlots)
-                    });
+                //ItemSetWarlord.OrderItems();
+                //ItemSetCrusader.OrderItems();
+                //ItemSetHunter.OrderItems();
+                //ItemSetRedeemer.OrderItems();
+
+                //if (ItemSetShaper.EmptyItemSlots.Count == 0)
+                //    ItemSetListHighlight.Add(new ItemSet
+                //    {
+                //        ItemList = new List<Item>(ItemSetShaper.ItemList),
+                //        EmptyItemSlots = new List<string>(ItemSetShaper.EmptyItemSlots)
+                //    });
 
                 if (ItemSetElder.EmptyItemSlots.Count == 0)
                     ItemSetListHighlight.Add(new ItemSet
@@ -934,33 +937,33 @@ namespace EnhancePoE
                         EmptyItemSlots = new List<string>(ItemSetElder.EmptyItemSlots)
                     });
 
-                if (ItemSetCrusader.EmptyItemSlots.Count == 0)
-                    ItemSetListHighlight.Add(new ItemSet
-                    {
-                        ItemList = new List<Item>(ItemSetCrusader.ItemList),
-                        EmptyItemSlots = new List<string>(ItemSetCrusader.EmptyItemSlots)
-                    });
+                //if (ItemSetCrusader.EmptyItemSlots.Count == 0)
+                //    ItemSetListHighlight.Add(new ItemSet
+                //    {
+                //        ItemList = new List<Item>(ItemSetCrusader.ItemList),
+                //        EmptyItemSlots = new List<string>(ItemSetCrusader.EmptyItemSlots)
+                //    });
 
-                if (ItemSetHunter.EmptyItemSlots.Count == 0)
-                    ItemSetListHighlight.Add(new ItemSet
-                    {
-                        ItemList = new List<Item>(ItemSetHunter.ItemList),
-                        EmptyItemSlots = new List<string>(ItemSetHunter.EmptyItemSlots)
-                    });
+                //if (ItemSetHunter.EmptyItemSlots.Count == 0)
+                //    ItemSetListHighlight.Add(new ItemSet
+                //    {
+                //        ItemList = new List<Item>(ItemSetHunter.ItemList),
+                //        EmptyItemSlots = new List<string>(ItemSetHunter.EmptyItemSlots)
+                //    });
 
-                if (ItemSetWarlord.EmptyItemSlots.Count == 0)
-                    ItemSetListHighlight.Add(new ItemSet
-                    {
-                        ItemList = new List<Item>(ItemSetWarlord.ItemList),
-                        EmptyItemSlots = new List<string>(ItemSetWarlord.EmptyItemSlots)
-                    });
+                //if (ItemSetWarlord.EmptyItemSlots.Count == 0)
+                //    ItemSetListHighlight.Add(new ItemSet
+                //    {
+                //        ItemList = new List<Item>(ItemSetWarlord.ItemList),
+                //        EmptyItemSlots = new List<string>(ItemSetWarlord.EmptyItemSlots)
+                //    });
 
-                if (ItemSetRedeemer.EmptyItemSlots.Count == 0)
-                    ItemSetListHighlight.Add(new ItemSet
-                    {
-                        ItemList = new List<Item>(ItemSetRedeemer.ItemList),
-                        EmptyItemSlots = new List<string>(ItemSetRedeemer.EmptyItemSlots)
-                    });
+                //if (ItemSetRedeemer.EmptyItemSlots.Count == 0)
+                //    ItemSetListHighlight.Add(new ItemSet
+                //    {
+                //        ItemList = new List<Item>(ItemSetRedeemer.ItemList),
+                //        EmptyItemSlots = new List<string>(ItemSetRedeemer.EmptyItemSlots)
+                //    });
             }
 
             //ItemSetListHighlight = new List<ItemSet>(ItemSetList);

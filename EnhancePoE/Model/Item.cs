@@ -73,11 +73,11 @@ namespace EnhancePoE
 
     public class Influence
     {
-        public bool shaper { get; set; } = false;
+        //public bool shaper { get; set; } = false;
         public bool elder { get; set; } = false;
-        public bool crusader { get; set; } = false;
-        public bool redeemer { get; set; } = false;
-        public bool hunter { get; set; } = false;
-        public bool warlord { get; set; } = false;
+        //public bool crusader { get; set; } = false;
+        //public bool redeemer { get; set; } = false;
+        //public bool hunter { get; set; } = false;
+        //public bool warlord { get; set; } = false;
     }
 }

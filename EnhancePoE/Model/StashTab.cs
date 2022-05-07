@@ -29,12 +29,12 @@ namespace EnhancePoE.Model
         public Uri StashTabUri { get; set; }
         public List<Item> ItemList { get; set; }
         public List<Item> ItemListChaos { get; set; } = new List<Item>();
-        public List<Item> ItemListShaper { get; set; } = new List<Item>();
+        //public List<Item> ItemListShaper { get; set; } = new List<Item>();
         public List<Item> ItemListElder { get; set; } = new List<Item>();
-        public List<Item> ItemListWarlord { get; set; } = new List<Item>();
-        public List<Item> ItemListCrusader { get; set; } = new List<Item>();
-        public List<Item> ItemListHunter { get; set; } = new List<Item>();
-        public List<Item> ItemListRedeemer { get; set; } = new List<Item>();
+        //public List<Item> ItemListWarlord { get; set; } = new List<Item>();
+        //public List<Item> ItemListCrusader { get; set; } = new List<Item>();
+        //public List<Item> ItemListHunter { get; set; } = new List<Item>();
+        //public List<Item> ItemListRedeemer { get; set; } = new List<Item>();
 
         public ObservableCollection<Cell> OverlayCellsList { get; set; } = new ObservableCollection<Cell>();
 
@@ -147,12 +147,12 @@ namespace EnhancePoE.Model
         {
             if (Settings.Default.ExaltedRecipe)
             {
-                ItemListShaper.Clear();
+                //ItemListShaper.Clear();
                 ItemListElder.Clear();
-                ItemListCrusader.Clear();
-                ItemListWarlord.Clear();
-                ItemListHunter.Clear();
-                ItemListRedeemer.Clear();
+                //ItemListCrusader.Clear();
+                //ItemListWarlord.Clear();
+                //ItemListHunter.Clear();
+                //ItemListRedeemer.Clear();
             }
 
             // for loop backwards for deleting from list 
@@ -182,17 +182,18 @@ namespace EnhancePoE.Model
                 if (Settings.Default.ExaltedRecipe)
                     if (ItemList[i].influences != null)
                     {
-                        if (ItemList[i].influences.shaper)
-                            ItemListShaper.Add(ItemList[i]);
-                        else if (ItemList[i].influences.elder)
+                        //if (ItemList[i].influences.shaper)
+                        //    ItemListShaper.Add(ItemList[i]);
+                        if (ItemList[i].influences.elder)
                             ItemListElder.Add(ItemList[i]);
-                        else if (ItemList[i].influences.warlord)
-                            ItemListWarlord.Add(ItemList[i]);
-                        else if (ItemList[i].influences.crusader)
-                            ItemListCrusader.Add(ItemList[i]);
-                        else if (ItemList[i].influences.hunter)
-                            ItemListHunter.Add(ItemList[i]);
-                        else if (ItemList[i].influences.redeemer) ItemListRedeemer.Add(ItemList[i]);
+                        //else if (ItemList[i].influences.warlord)
+                        //    ItemListWarlord.Add(ItemList[i]);
+                        //else if (ItemList[i].influences.crusader)
+                        //    ItemListCrusader.Add(ItemList[i]);
+                        //else if (ItemList[i].influences.hunter)
+                        //    ItemListHunter.Add(ItemList[i]);
+                        //else if (ItemList[i].influences.redeemer)
+                        //    ItemListRedeemer.Add(ItemList[i]);
 
                         ItemList.RemoveAt(i);
                         continue;
